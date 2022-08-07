@@ -15,7 +15,7 @@ int crat = 2;
 while (true)
 {
     Console.WriteLine("Введите число или команду");
-    string res = Console.ReadLine();
+    string? res = Console.ReadLine();
     if (res == "end")
     {
         break;
