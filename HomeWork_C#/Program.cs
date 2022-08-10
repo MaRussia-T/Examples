@@ -1,6 +1,6 @@
-﻿Console.Clear(); //очистка консоли
+﻿//Console.Clear(); //очистка консоли
 
-Console.WriteLine("Задача 2"); //На экран выводится номер задачи
+/*Console.WriteLine("Задача 2"); //На экран выводится номер задачи
 //При необходимости можно предложить пользователю ввести числа из консоли, для этого необходимо заменить в строках ниже присвоение переменных кодом, прописанным после двойного слеша
 
 
@@ -212,4 +212,63 @@ while (what1 <= n1)
     what1++;
 }
 
+Console.WriteLine("_______________________________________________________________________________"); */
+
+
+Console.WriteLine("Задача 10");
+// Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+
+int[] number = new int[] {4, 5, 6}; 
+Console.WriteLine(number[1]);
+
+int[] number1 = new int[] {7, 8, 2};
+Console.WriteLine(number1[1]);
+
+int[] number2 = new int[] {9, 1, 8};
+Console.WriteLine(number2[1]);
+
+Console.WriteLine("Задача 13");
+//Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+
+int[] array = { 6, 4, 5};
+
+int n = array.Length;
+int i = 2;
+if (i >= n)
+    Console.WriteLine("В числе нет третьей цифры"); 
+
+else
+    Console.WriteLine("Третья цифра числа " + array[i]);
+
+i++;
+
+Console.WriteLine("_______");
+
+int[] array1 = { 7, 8};
+
+int n1 = array1.Length;
+int i1 = 2;
+if (i1 >= n1)
+    Console.WriteLine("В числе нет третьей цифры"); 
+
+else
+    Console.WriteLine("Третья цифра числа " + array1[i1]);
+
+i1++;
+
+Console.WriteLine("_______");
+
+int[] array2 = { 3, 2, 6, 7, 9};
+
+int n2 = array2.Length;
+int i2 = 2;
+if (i2 >= n2)
+    Console.WriteLine("В числе нет третьей цифры"); 
+
+else
+    Console.WriteLine("Третья цифра числа " + array2[i2]);
+
+i2++;
+
 Console.WriteLine("_______________________________________________________________________________");
+
