@@ -215,7 +215,7 @@ while (what1 <= n1)
 Console.WriteLine("_______________________________________________________________________________"); */
 
 
-Console.WriteLine("Задача 10");
+/*Console.WriteLine("Задача 10");
 // Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 
 Console.WriteLine("Введите трехзначное число");
@@ -233,10 +233,60 @@ string stringNum1 = Convert.ToString(num1);
 
 
 if (stringNum1.Length > 2)
-    Console.WriteLine("Третья цифра числа " + stringNum1[2]); 
+    Console.WriteLine("Третья цифра числа " + stringNum1[2]);
 
 else
     Console.WriteLine("В числе нет третьей цифры");
 
+Console.WriteLine("_______________________________________________________________________________");*/
+
+Console.WriteLine("Задача 19");
+//Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+
+
+Console.WriteLine("Введите пятизначное число");
+
+string num2 = Console.ReadLine();
+
+if ((num2[0] != num2[4] | num2[1] != num2[3]) | num2.Length > 5)
+    Console.WriteLine("Ваше число не палиндром");
+
+else
+if (num2[0] == num2[4] & num2[1] == num2[3])
+    Console.WriteLine("Ваше число палиндром");
+
 Console.WriteLine("_______________________________________________________________________________");
+
+Console.WriteLine("Задача 21");
+
+//Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+
+
+Console.WriteLine("Введите координаты точки А (три числа через пробел) и нажмите enter");
+int[] dotA = Console.ReadLine().Split(' ').Select(i => int.Parse(i)).ToArray();
+
+Console.WriteLine("Введите координаты точки B (три числа через пробел) и нажмите enter");
+int[] dotB = Console.ReadLine().Split(' ').Select(i => int.Parse(i)).ToArray();
+
+
+double x = dotB[0] - dotA[0], y = dotB[1] - dotA[1], z = dotB[2] - dotA[2];
+
+
+double dist = Math.Sqrt((Math.Pow(x, 2)) + (Math.Pow(y, 2)) + (Math.Pow(z, 2)));
+
+Console.WriteLine("Расстоние между точками А и В равно " + dist + ".");
+
+Console.WriteLine("Задача 23");
+//Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+System.Console.WriteLine("Введите число N");
+int n = Convert.ToInt32(Console.ReadLine());
+for (int i = 1; i <= n; i++)
+{
+    Console.WriteLine(Math.Pow(i, 3));
+}
+
+
+
+
 
