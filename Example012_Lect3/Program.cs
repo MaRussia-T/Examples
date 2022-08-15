@@ -128,7 +128,7 @@ Console.WriteLine(newText);
 Console.WriteLine();
  newText = Replace(newText, 'к', 'К');
  Console.WriteLine(newText);
- */
+ 
 
 
 int[] arr = { 1, 5, 4, 3, 2, 6, 7, 1, 1 };
@@ -163,4 +163,83 @@ void SelectionSort(int[] array)
 
 PrintArray(arr);
 SelectionSort(arr);
-PrintArray(arr);
+PrintArray(arr); */
+
+
+// Конспект семинара 4
+
+
+
+
+
+/*  static void ReadNumber(int number)
+  {
+      Console.WriteLine(number * number);
+  }
+
+  static string WriteNumber(int number)
+  {
+      return number %2 == 0 ? "Кратное" : "Не кратное";
+  }
+  public static void Main(string[] args)
+  {
+      int number = Convert.ToInt32(Console.ReadLine());
+      ReadNumber(number);
+      System.Console.WriteLine(WriteNumber(number));
+      Console.ReadLine();
+  }
+  */
+
+class Program
+{
+    /* static int PowTwoNumber(int number)
+     {
+         return number * number;
+     }
+
+     static string MultipleTwoNumber(int number)
+     {
+         return number % 2 == 0 ? "Кратное" : "Не кратное";
+     } */
+
+    static int[] Shuffle(int[] array)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            int j = new Random().Next(0, i + 1);
+            int tmp = array[i];
+            array[i] = array[j];
+            array[j] = tmp;
+        }
+        return array;
+    }
+    static int[] CreaterArray(int number)
+    {
+        int[] array = new int[number];
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = i + 1;
+        }
+        return array;
+    }
+    static void WriteArray(int[] array)
+    {
+        Console.WriteLine("Вывод массива");
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.Write(array[i] + " ");
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        //int number = Convert.ToInt32(Console.ReadLine());
+        // Console.WriteLine(PowTwoNumber(number));
+        // Console.WriteLine(MultipleTwoNumber(PowTwoNumber(number)));
+        //
+        int[] array = CreaterArray(30);
+        WriteArray(array);
+        array = Shuffle(array);
+        Console.ReadLine();
+    }
+}
