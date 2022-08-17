@@ -290,3 +290,90 @@ for (int i = 1; i <= n; i++)
 */
 
 // задача 25 решать без Math, 29 - вводим сами цифры, а они преобразуются в массив
+
+
+Console.WriteLine("Задача 25");
+//Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+
+Console.WriteLine("Введите число A");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число B");
+int b = Convert.ToInt32(Console.ReadLine());
+
+int n = a; //создаем промежуточную переменную n
+for(int i = 1; i < b; i++)
+   { 
+    n= n*a; //умножаем промежуточную переменную n на число а внутри цикла столько раз i, сколько удовлетворяет условиям цикла, т.е. пока i меньше b
+      }
+      Console.WriteLine(n);
+
+Console.WriteLine("_______________________________________________________________________________");
+
+
+
+
+Console.WriteLine("Задача 27"); //Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+
+Console.WriteLine("Введите число");
+int Num = Math.Abs(Convert.ToInt32(Console.ReadLine())); //преобразуем вводимое число в модуль вводимого целого числа
+
+int c = 0;
+while (Num > 0)
+{
+    c += Num % 10; //остатотк от деления на 10 переменной Num прибавляем к переменной с
+    Num /= 10; // делим переменную Num на 10 и значение присваиваем в ту же переменную. Это позволит избавиться от последней цифры в числе Num, потому что эту цифру в переменную с мы уже добавили
+}
+
+Console.WriteLine("Сумма цифр в числе равна {0}", c);
+
+/* Решение с помощью метода
+
+Console.WriteLine("Введите число");
+int myNum = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+
+int Number(int a)
+{
+    int n = 0;
+    while (a > 0)
+    {
+        n += a % 10;
+        a /= 10;
+    }
+    return n;
+}
+Console.WriteLine("Сумма цифр в числе равна {0}", Number(myNum));
+*/
+
+Console.WriteLine("_______________________________________________________________________________");
+
+
+Console.WriteLine("Задача 29");
+//Напишите программу, которая задаёт массив из N элементов и выводит их на экран.
+
+
+Console.Write("Введите количество элементов массива:\t");
+int elCount = int.Parse(Console.ReadLine());
+int[] array = new int[elCount];
+
+for (int i = 0; i < array.Length; i++)
+{
+    Console.Write($"Введите элемент массива под индексом {i}:\t");
+    array[i] = int.Parse(Console.ReadLine());
+}
+
+Console.WriteLine("Вывод массива:");
+for (int i = 0; i < array.Length; i++) //перебираем элементы и поочередно выводим их на экран
+    Console.WriteLine(array[i]);
+
+/*
+Console.Write("Введите количество элементов массива:\t");
+int elCount = int.Parse(Console.ReadLine());
+int[] array = new int[elCount];
+
+Console.WriteLine("Введите числа через пробел и нажмите enter");
+array = Console.ReadLine().Split(' ').Select(i => int.Parse(i)).ToArray();
+
+Console.WriteLine("Вывод массива:");
+for (int i = 0; i < array.Length; i++)
+    Console.WriteLine(array[i]);
+*/
