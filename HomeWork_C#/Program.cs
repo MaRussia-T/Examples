@@ -440,9 +440,9 @@ foreach (var item in randMass)
     Console.WriteLine(item.ToString());
 }
 int summ = 0;
-for (int i = 0; i < randMass.Length; i=i+2)
+for (int i = 1; i < randMass.Length; i +=2)
 
-    summ = summ + randMass[i];
+    summ += randMass[i];
 
 Console.WriteLine("Сумма элементов на нечетныхпозициях равна " + summ);
 */
@@ -450,11 +450,51 @@ Console.WriteLine("Сумма элементов на нечетныхпозиц
 
 //Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
+int MaxNumberArray(int[] array)
+{
+    int max = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > max)
+        {
+            max = array[i];
+        }
+
+    }
+    return max;
+}
+
+int MinNumberArray(int[] array)
+{
+    int min = array[0];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] < min)
+        {
+            min = array[i];
+        }
+
+    }
+    return min;
+}
+
+
+    int[] array = { 1, 2, 45, 2422, 3, 6 };
+    int max = MaxNumberArray(array);
+    int min = MinNumberArray(array);
+    Console.WriteLine(max);
+    Console.WriteLine(min);
+    Console.WriteLine(max - min);
+
+
+
+
+/*
 
 Console.WriteLine("Задайте длину массива:\t");
 
 int arrayLength = Convert.ToInt32(Console.ReadLine());
-double[] array = new double[arrayLength];
+int[] array = new int[arrayLength];
 
 for (int j = 0; j < arrayLength; j++)
 {
@@ -468,19 +508,19 @@ foreach (var item in array)
 
 
     int i = 0;
-    double max = array[0];
-    double min = array[0];
+    int max = array[0];
+    int min = array[0];
     while (i < array.Length)
     {
         if (array[i] > max)
         {
-        double tmp = array[i];
+        int tmp = array[i];
         max = tmp;
             array[i] = max;
         }
         if (array[i] < min)
         {
-           double tmp = array[i];
+           int tmp = array[i];
         min = tmp;
             array[i] = min;
         }
@@ -489,7 +529,7 @@ foreach (var item in array)
     Console.WriteLine("Минимальное число в массиве: " + min);
     Console.WriteLine("Разница между максимальным и минимальным значениями равна " + (max-min));
 
-
+*/
 
 
 
