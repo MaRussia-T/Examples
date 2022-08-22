@@ -290,7 +290,7 @@ for (int i = 1; i <= n; i++)
 */
 
 // задача 25 решать без Math, 29 - вводим сами цифры, а они преобразуются в массив
-
+/*
 
 Console.WriteLine("Задача 25");
 //Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
@@ -325,7 +325,7 @@ while (Num > 0)
 }
 
 Console.WriteLine("Сумма цифр в числе равна {0}", c);
-
+*/
 /* Решение с помощью метода
 
 Console.WriteLine("Введите число");
@@ -342,7 +342,7 @@ int Number(int a)
     return n;
 }
 Console.WriteLine("Сумма цифр в числе равна {0}", Number(myNum));
-*/
+
 
 Console.WriteLine("_______________________________________________________________________________");
 
@@ -376,4 +376,120 @@ array = Console.ReadLine().Split(' ').Select(i => int.Parse(i)).ToArray();
 Console.WriteLine("Вывод массива:");
 for (int i = 0; i < array.Length; i++)
     Console.WriteLine(array[i]);
+
+
+
+Console.Write("Введите количество элементов массива:\t");
+int elCount = int.Parse(Console.ReadLine());
+int[] array = new int[elCount];
+
+Console.WriteLine("Введите числа через пробел и нажмите enter");
+array = Console.ReadLine().Split(' ').Select(i => int.Parse(i)).ToArray();
+
+Console.WriteLine("Вывод массива:");
+for (int i = 0; i < array.Length; i++)
+    Console.WriteLine(array[i]);
+
 */
+/*
+//Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+
+Console.WriteLine("Задайте длину массива:\t");
+
+int arrayLength = Convert.ToInt32(Console.ReadLine());
+int[] randomMassiv = new int[arrayLength];
+
+for (int i = 0; i < arrayLength; i++)
+{
+    randomMassiv[i] = new Random().Next(100, 999);
+}
+
+foreach (var item in randomMassiv)
+{
+    Console.WriteLine(item.ToString());
+}
+
+int result = 0;
+for (int i = 0; i < randomMassiv.Length; i++)
+{
+    if (randomMassiv[i] % 2 == 0)
+        result++;
+}
+
+Console.WriteLine(result);
+
+*/
+/*
+//Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+
+
+
+
+
+Console.WriteLine("Задайте длину массива:\t");
+
+int arrayLength = Convert.ToInt32(Console.ReadLine());
+int[] randMass = new int[arrayLength];
+
+for (int i = 0; i < arrayLength; i++)
+{
+    randMass[i] = new Random().Next(-100, 100);
+}
+foreach (var item in randMass)
+{
+    Console.WriteLine(item.ToString());
+}
+int summ = 0;
+for (int i = 0; i < randMass.Length; i=i+2)
+
+    summ = summ + randMass[i];
+
+Console.WriteLine("Сумма элементов на нечетныхпозициях равна " + summ);
+*/
+
+
+//Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+
+Console.WriteLine("Задайте длину массива:\t");
+
+int arrayLength = Convert.ToInt32(Console.ReadLine());
+double[] array = new double[arrayLength];
+
+for (int j = 0; j < arrayLength; j++)
+{
+    array[j] = new Random().Next(-100, 100);
+}
+
+foreach (var item in array)
+{
+    Console.WriteLine(item.ToString());
+}
+
+
+    int i = 0;
+    double max = array[0];
+    double min = array[0];
+    while (i < array.Length)
+    {
+        if (array[i] > max)
+        {
+        double tmp = array[i];
+        max = tmp;
+            array[i] = max;
+        }
+        if (array[i] < min)
+        {
+           double tmp = array[i];
+        min = tmp;
+            array[i] = min;
+        }
+    }
+    Console.WriteLine("Максимальное число в массиве: " + max);
+    Console.WriteLine("Минимальное число в массиве: " + min);
+    Console.WriteLine("Разница между максимальным и минимальным значениями равна " + (max-min));
+
+
+
+
+
