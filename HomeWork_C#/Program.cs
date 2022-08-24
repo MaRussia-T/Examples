@@ -391,13 +391,16 @@ for (int i = 0; i < array.Length; i++)
     Console.WriteLine(array[i]);
 
 */
-/*
-//Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+
+//Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
+//Напишите программу, которая покажет количество чётных чисел в массиве.
 
 Console.WriteLine("Задайте длину массива:\t");
 
 int arrayLength = Convert.ToInt32(Console.ReadLine());
 int[] randomMassiv = new int[arrayLength];
+
+Console.WriteLine();
 
 for (int i = 0; i < arrayLength; i++)
 {
@@ -416,22 +419,22 @@ for (int i = 0; i < randomMassiv.Length; i++)
         result++;
 }
 
-Console.WriteLine(result);
+Console.WriteLine();
+Console.WriteLine("Количество четных чисел в массиве равно: " + result);
 
-*/
-/*
+
+
 //Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
-
-
-
 
 
 Console.WriteLine("Задайте длину массива:\t");
 
-int arrayLength = Convert.ToInt32(Console.ReadLine());
+int arrLength = Convert.ToInt32(Console.ReadLine());
 int[] randMass = new int[arrayLength];
 
-for (int i = 0; i < arrayLength; i++)
+Console.WriteLine();
+
+for (int i = 0; i < arrLength; i++)
 {
     randMass[i] = new Random().Next(-100, 100);
 }
@@ -440,12 +443,14 @@ foreach (var item in randMass)
     Console.WriteLine(item.ToString());
 }
 int summ = 0;
-for (int i = 1; i < randMass.Length; i +=2)
-
+for (int i = 0; i < randMass.Length; i += 2)
+{
     summ += randMass[i];
+}
 
+Console.WriteLine();
 Console.WriteLine("Сумма элементов на нечетныхпозициях равна " + summ);
-*/
+
 
 
 //Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
@@ -459,7 +464,6 @@ int MaxNumberArray(int[] array)
         {
             max = array[i];
         }
-
     }
     return max;
 }
@@ -478,58 +482,28 @@ int MinNumberArray(int[] array)
     return min;
 }
 
-
-    int[] array = { 1, 2, 45, 2422, 3, 6 };
-    int max = MaxNumberArray(array);
-    int min = MinNumberArray(array);
-    Console.WriteLine(max);
-    Console.WriteLine(min);
-    Console.WriteLine(max - min);
-
-
-
-
-/*
-
 Console.WriteLine("Задайте длину массива:\t");
 
-int arrayLength = Convert.ToInt32(Console.ReadLine());
-int[] array = new int[arrayLength];
+int massLength = Convert.ToInt32(Console.ReadLine());
+int[] mass = new int[massLength];
 
-for (int j = 0; j < arrayLength; j++)
+Console.WriteLine();
+
+for (int i = 0; i < massLength; i++)
 {
-    array[j] = new Random().Next(-100, 100);
+    mass[i] = new Random().Next(0, 100);
 }
-
-foreach (var item in array)
+foreach (var item in mass)
 {
     Console.WriteLine(item.ToString());
 }
 
-
-    int i = 0;
-    int max = array[0];
-    int min = array[0];
-    while (i < array.Length)
-    {
-        if (array[i] > max)
-        {
-        int tmp = array[i];
-        max = tmp;
-            array[i] = max;
-        }
-        if (array[i] < min)
-        {
-           int tmp = array[i];
-        min = tmp;
-            array[i] = min;
-        }
-    }
-    Console.WriteLine("Максимальное число в массиве: " + max);
-    Console.WriteLine("Минимальное число в массиве: " + min);
-    Console.WriteLine("Разница между максимальным и минимальным значениями равна " + (max-min));
-
-*/
-
+Console.WriteLine();
+int max = MaxNumberArray(mass);
+int min = MinNumberArray(mass);
+Console.WriteLine();
+Console.WriteLine("Максимальное число в массиве: " + max);
+Console.WriteLine("Минимальное число в массиве: " + min);
+Console.WriteLine("Разница между максимальным и минимальным значениями равна " + (max - min));
 
 
