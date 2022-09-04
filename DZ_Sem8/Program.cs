@@ -1,4 +1,5 @@
-﻿// // Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+﻿// // Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию 
+//элементы каждой строки двумерного массива.
 // // Например, задан массив:
 // // 1 4 7 2
 // // 5 9 2 3
@@ -7,6 +8,8 @@
 // // 7 4 2 1
 // // 9 5 3 2
 // // 8 4 4 2
+
+/*
 
 int[,] GenerateArray(int t, int i)
 {
@@ -102,9 +105,53 @@ PrintArray(arr);
 //  1 строка
 
 
+Console.WriteLine("Введите количество строк m: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите количество элементов массива в строке n: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int[,] array = new int[m, n];
+Random myRandom = new Random();
+Console.WriteLine(" ");
+for (int i = 0; i < m; i++)
+{
+    for (int j = 0; j < n; j++)
+    {
+        array[i, j] = myRandom.Next(0, 10 + n);
+        Console.Write("{0}\t", array[i, j]);
+    }
+    Console.WriteLine(" ");
+}
+int result = 1;
+int temp1 = 0, temp2 = 0;
+for (int i = 0; i < m; i++)
+{
+    for (int j = 0; j < n; j++)
+    {
+        if (i == 0)
+        {
+            temp2 += array[i, j];
+            temp1 = temp2;
+        }
+        else { temp2 += array[i, j]; }
+    }
+    if (temp1 > temp2)
+    {
+        result = i + 1;
+        temp1 = temp2;
+        temp2 = 0;
+    }
+    temp2 = 0;
+}
+Console.WriteLine(" ");
+Console.Write("строка с наименьшей суммой элементов: {0}", result);
+Console.WriteLine(" ");
+Console.WriteLine(" ");
 
 
 
+
+
+*/
 
 
 //  Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение 
@@ -115,6 +162,75 @@ PrintArray(arr);
 // Результирующая матрица будет:
 // 18 20
 // 15 18
+
+
+Console.WriteLine("Введите количество строк первого массива");
+int rows=int.Parse(Console.ReadLine());
+Console.WriteLine("Введите количество столбцов первого массива");
+int columns=int.Parse(Console.ReadLine());
+
+int[,] matrix1=FillArray(rows,columns);
+
+Console.WriteLine("Введите количество строк второго массива");
+rows=int.Parse(Console.ReadLine());
+Console.WriteLine("Введите количество столбцов второго массива");
+columns=int.Parse(Console.ReadLine());
+
+int[,] matrix2=FillArray(rows,columns);
+
+int[,] matrix3 = ProductMatrix(matrix1, matrix2);
+PrintArray(matrix1);
+Console.WriteLine();
+PrintArray(matrix2);
+Console.WriteLine();
+PrintArray(matrix3);
+
+
+int[,] FillArray(int n,int m)
+{
+    int[,] res=new int[n,m];
+    for(int i=0; i<n;i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            res[i,j]=new Random().Next(10);
+        }
+    
+    }
+    return res;
+}
+void PrintArray(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {   
+        for (int j = 0 ; j < matrix.GetLength(1)  ; j++)
+        {
+            Console.Write($"{matrix[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+int[,] ProductMatrix(int[,] matrix1, int[,] matrix2)
+{
+    if (matrix1.GetLength(1) != matrix2.GetLength(0))
+    {
+        System.Console.WriteLine("Матрицы невозможно перемножить в таком порядке!");
+        return matrix1;
+    }
+    int[,] matrix3 = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
+    for (int i = 0; i < matrix1.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix2.GetLength(1); j++)
+        {
+            for (int k = 0; k < matrix1.GetLength(1); k++)
+            {
+                matrix3[i, j] +=matrix1[i, k] * matrix2[k, j];
+            }
+        }
+    }
+    return matrix3;
+}
+
 
 
 
